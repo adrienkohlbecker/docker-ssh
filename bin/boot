@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Unofficial bash strict mode http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -eu
+set -o pipefail
+IFS=$'\n\t'
+
+ssh-keygen -A
+
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF4/IGL8u2y68gVp7AKb7qG5XMOgfFZFw1HSG1GiOfaGnT1VlLg+rWxngr340kI4ThLJn4XjcdcM5JMUnfwEw51IG3wLksS4oVFATbWh2MFelczh4BxZ5TSLBT4uYDx6WY5OHhc6fA6m7PfkvVdcaQ8RAbJvksL7QfR1xcwu86HLZtcy/QuszY1U6ii2T+fkA5xDc9CUV6qY4BgOBkerCBsOU05DmrbcbEWsSObtqF8N17KxQydpXc00qT9QGoX/29qSm8Ef3piyP03nU6VTco5s5XFk5qz+n5qrBpVDxNunDXGqM2klCyEImxpn3oEaajXDeMt/OMaaumOl8sOmF9" > /etc/ssh/authorized_keys/arq
+
+chown root /home/arq
+chmod o-rwx /home/arq
+mkdir -p /home/arq/sftp
+chown arq /home/arq/sftp
+
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCc+W1EYCEukKhd3y56odNHf5TCtvw68+mWvAt/q2gP3qGn2305k9007rZoCzmgjuIIrB7w39tV+nk9zkEcx1pe3amz9HIGHWcOJUXCfowKyxhY53/5cBw8HfQdPa4jWOp14v4T4Go/1mJ5VMA4Dawf6gXl3v4wSeHt2z81vbrUTa05vRdCpUcHoo6aoeTNT2pJH6Kzl9kXIanYdsVf2wDWA9580KQq3RFK8Yk9H5+rAzZ4o82+/iy48WygSieRuno/eVAR5NAs2I0oh+KL1hxd7TzCYErqPFADSXFmqCr1f8pgCQltfyClejlKOyh/t2OiUKea4bmlRKX+RxmmZSHN" > /etc/ssh/authorized_keys/lgg4
+
+chown root /home/arq
+chmod o-rwx /home/lgg4
+mkdir -p /home/lgg4/sftp
+chown lgg4 /home/lgg4/sftp
+
+/usr/sbin/sshd -e -D

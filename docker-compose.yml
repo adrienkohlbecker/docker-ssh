@@ -1,0 +1,14 @@
+---
+sftp:
+  build: .
+  container_name: sftp
+  hostname: sftp
+  domainname: kohlby.fr
+  user: root
+  tty: true
+  ports:
+    - "2223:22"
+  volumes:
+    - ./volumes/arq:/home/arq/sftp
+    - ./volumes/lgg4:/home/lgg4/sftp
+    - ./volumes/ssh:/etc/ssh/host_keys
