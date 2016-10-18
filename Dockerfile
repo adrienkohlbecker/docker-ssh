@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM akohlbecker/base
 
 RUN set -x && \
     apt-get --quiet --yes update && \
@@ -20,12 +20,9 @@ RUN mkdir /var/run/sshd && \
     rm -f /etc/ssh/ssh_host* && \
     mkdir /etc/ssh/authorized_keys
 
-ENV SHR_EXEC_KEEP_CAPS ALL
-ENV SHR_EXEC_USER root
-
 EXPOSE 22
 
-COPY sshd_config /etc/ssh/sshd_config
-COPY bin/boot /usr/local/bin/sshd_boot
+ADD app /app
+WORKDIR /app
 
-CMD /usr/local/bin/sshd_boot
+CMD ["/app/boot", "/usr/sbin/sshd", "-e", "-D"]
