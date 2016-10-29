@@ -39,6 +39,5 @@ Match group sftpaccess
   ForceCommand internal-sftp -d /sftp
 
 Match group adrien
-  ChrootDirectory %h
   X11Forwarding no
   AllowTcpForwarding no
