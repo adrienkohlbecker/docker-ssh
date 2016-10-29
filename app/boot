@@ -18,4 +18,7 @@ chown arq /home/arq/sftp
 
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO34KEmj8G9aDfh549JRg7QPo5hgohiHqa/s23Ng6v0B" > /etc/ssh/authorized_keys/adrien
 
+chown root /home/adrien
+chmod o-rwx /home/adrien
+
 exec ${*:1}
