@@ -12,7 +12,7 @@ RUN set -x && \
     groupadd --gid 2200 sftpaccess && \
     groupadd --gid 1000 adrien && \
     useradd --uid 2201 --gid 2200 --create-home -p '*' --shell /usr/sbin/nologin arq && \
-    useradd --uid 1000 --gid 1000 --create-home -p '*' adrien
+    useradd --uid 1000 --gid 1000 --create-home -p '*' --shell /bin/bash adrien
 USER root
 
 RUN mkdir /var/run/sshd && \
