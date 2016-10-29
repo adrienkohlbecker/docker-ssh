@@ -30,10 +30,15 @@ UsePrivilegeSeparation sandbox
 
 AuthorizedKeysFile	/etc/ssh/authorized_keys/%u
 Subsystem sftp internal-sftp
-AllowGroups sftpaccess
+AllowGroups sftpaccess adrien
 
 Match group sftpaccess
   ChrootDirectory %h
   X11Forwarding no
   AllowTcpForwarding no
   ForceCommand internal-sftp -d /sftp
+
+Match group adrien
+  ChrootDirectory %h
+  X11Forwarding no
+  AllowTcpForwarding no

@@ -16,11 +16,6 @@ chmod o-rwx /home/arq
 mkdir -p /home/arq/sftp
 chown arq /home/arq/sftp
 
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCc+W1EYCEukKhd3y56odNHf5TCtvw68+mWvAt/q2gP3qGn2305k9007rZoCzmgjuIIrB7w39tV+nk9zkEcx1pe3amz9HIGHWcOJUXCfowKyxhY53/5cBw8HfQdPa4jWOp14v4T4Go/1mJ5VMA4Dawf6gXl3v4wSeHt2z81vbrUTa05vRdCpUcHoo6aoeTNT2pJH6Kzl9kXIanYdsVf2wDWA9580KQq3RFK8Yk9H5+rAzZ4o82+/iy48WygSieRuno/eVAR5NAs2I0oh+KL1hxd7TzCYErqPFADSXFmqCr1f8pgCQltfyClejlKOyh/t2OiUKea4bmlRKX+RxmmZSHN" > /etc/ssh/authorized_keys/lgg4
-
-chown root /home/arq
-chmod o-rwx /home/lgg4
-mkdir -p /home/lgg4/sftp
-chown lgg4 /home/lgg4/sftp
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO34KEmj8G9aDfh549JRg7QPo5hgohiHqa/s23Ng6v0B" > /etc/ssh/authorized_keys/adrien
 
 exec ${*:1}
