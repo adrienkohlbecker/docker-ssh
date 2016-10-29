@@ -2,7 +2,7 @@ FROM akohlbecker/base
 
 RUN set -x && \
     apt-get --quiet --yes update && \
-    apt-get --quiet --yes install openssh-server && \
+    apt-get --quiet --yes install openssh-server rsync && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
