@@ -16,6 +16,6 @@ chmod o-rwx /home/arq
 mkdir -p /home/arq/sftp
 chown arq /home/arq/sftp
 
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO34KEmj8G9aDfh549JRg7QPo5hgohiHqa/s23Ng6v0B" > /etc/ssh/authorized_keys/adrien
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8DopY10lEHTS6evSGDLkwsBoSnG2gLsUwxAeDjhfyx" > /etc/ssh/authorized_keys/adrien
 
 exec ${*:1}
