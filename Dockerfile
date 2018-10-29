@@ -1,4 +1,6 @@
-FROM akohlbecker/base
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN set -x && \
     apt-get --quiet --yes update && \
